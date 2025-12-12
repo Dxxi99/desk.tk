@@ -1,6 +1,11 @@
+// edgestore 완전히 비활성화 (에러 없애기용)
 "use client";
-import { type EdgeStoreRouter } from "../app/api/edgestore/[...edgestore]/route";
-import { createEdgeStoreProvider } from "@edgestore/react";
-const { EdgeStoreProvider, useEdgeStore } =
-  createEdgeStoreProvider<EdgeStoreRouter>();
-export { EdgeStoreProvider, useEdgeStore };
+
+export const EdgeStoreProvider = ({ children }: { children: React.ReactNode }) => {
+  return <>{children}</>;
+};
+
+export const useEdgeStore = () => ({
+  uploadFile: () => Promise.resolve({ url: "" }),
+  deleteFile: () => Promise.resolve(),
+});
