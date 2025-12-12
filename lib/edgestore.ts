@@ -1,7 +1,8 @@
-// edgestore 완전히 비활성화 (에러 없애기용)
 "use client";
 
-export const EdgeStoreProvider = ({ children }: { children: React.ReactNode }) => {
+import { ReactNode } from "react";
+
+export const EdgeStoreProvider = ({ children }: { children: ReactNode }) => {
   return <>{children}</>;
 };
 
